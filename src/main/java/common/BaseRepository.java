@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 public abstract class BaseRepository<ENTITY extends BaseEntity<ID>, ID> implements Repository<ENTITY, ID> {
-    private final List<ENTITY> entities = new ArrayList<>();
+    protected final List<ENTITY> entities = new ArrayList<>();
     @Override
     public Optional<ENTITY> findById(ID id) {
         return entities.stream()

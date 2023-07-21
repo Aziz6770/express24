@@ -22,6 +22,7 @@ public class User extends BaseEntity<UUID> {
     private double salary;
     private UUID restaurantId;
 
+    @Builder
     public User(UUID id, LocalDateTime created, LocalDateTime modified, User createdBy, User modifiedBy,
                 String name, String surname, double balance, String phoneNumber, String password, Role role,
                 LocalDate employeeDate, double salary, UUID restaurantId) {

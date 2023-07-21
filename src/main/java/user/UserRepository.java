@@ -14,6 +14,10 @@ public class UserRepository extends BaseRepository<User, UUID> {
 //    private final List<User> users = new ArrayList<>();
     private static final UserRepository repository = new UserRepository();
 
+    public Optional<User> findUserByPhoneNumber(String phoneNumber){
+       return entities.stream().filter(user -> user.getPhoneNumber().equals(phoneNumber)).findFirst();
+    }
+
   /*  public Optional<User> findById (UUID id) {
          return users.stream()
                  .filter(user -> user.getId().equals(id))
